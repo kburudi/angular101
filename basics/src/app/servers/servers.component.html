@@ -1,2 +1,49 @@
 <app-server></app-server>
 <app-server></app-server>
+
+<label>
+  <input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+</label>
+
+<p class="server-name p-3">{{ serverName }}</p>
+<!--Property Binding-->
+<button class="btn btn-primary shadow-none mt-3" [disabled]="!allowNewServer" (click)="onCreateServer()">
+  Add Server
+</button>
+<!--<div [innerText]="allowNewServer"></div>-->
+
+<!--Event binding-->
+<p>{{ serverCreationStatus }}</p>
+
+<!-- Two way binding -->
+<div class="binding-other-server-name">
+  <label>
+    Two Way Binding 1
+    <input type="text" class="form-control" (input)="onUpdateSName($event)" />
+  </label>
+  <br/>
+  <label for="s-name">Two Way Binding 2</label>
+  <input
+    id="s-name"
+    type="text"
+    name="s-name"
+    class="form-control server-name"
+    [(ngModel)]="sName"
+  />
+  <p class="server-name p-3">{{ sName }}</p>
+</div>
+
+<div class="2-way-create mt-5">
+  <label for="new-name">Two Way Binding New Server</label>
+  <input
+    id="new-name"
+    type="text"
+    name="new-name"
+    class="form-control server-name"
+    [(ngModel)]="newServer"
+  />
+  <button class="btn btn-primary shadow-none mt-3" (click)="onCreateNewServer()">
+    Add New Server
+  </button>
+  <p class="server-name p-3">{{ newServerStatus }}</p>
+</div>
