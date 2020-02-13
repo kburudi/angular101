@@ -1,6 +1,14 @@
 <app-server></app-server>
 <app-server></app-server>
-<button class="btn btn-primary shadow-none" [disabled]="!allowNewServer">
+
+<input type="text" class="form-control" (input)="onUpdateServerName($event)" />
+
+<p class="server-name p-3">{{ serverName }}</p>
+<!--Property Binding-->
+<button class="btn btn-primary shadow-none mt-3" [disabled]="!allowNewServer" (click)="onCreateServer()">
   Add Server
 </button>
-<div [innerText]="allowNewServer"></div>
+<!--<div [innerText]="allowNewServer"></div>-->
+
+<!--Event binding-->
+<p>{{ serverCreationStatus }}</p>
