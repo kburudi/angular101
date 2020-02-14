@@ -16,6 +16,8 @@ export class ServersComponent implements OnInit {
   newServer = 'Original Server';
   newServerStatus = 'New Server Pending';
   created = false;
+  servers = ['server 1', 'server 2', 'server 3'];
+  serverCreatedName = '';
 
   constructor() {
     setTimeout(() => {
@@ -41,6 +43,14 @@ export class ServersComponent implements OnInit {
 
   onUpdateSName(event: any) {
     this.sName = (event.target as HTMLInputElement).value;
+  }
+
+  onNameRealServer(event: any) {
+    this.serverCreatedName = event.target.value;
+  }
+
+  onAddServer() {
+    this.servers.push(this.serverCreatedName);
   }
 
 }
