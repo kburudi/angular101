@@ -45,5 +45,8 @@
   <button class="btn btn-primary shadow-none mt-3" (click)="onCreateNewServer()">
     Add New Server
   </button>
-  <p class="server-name p-3">{{ newServerStatus }}</p>
+  <p class="server-name p-3" *ngIf="created; else noServer">{{ newServerStatus }}</p>
+  <ng-template #noServer>
+    <p class="server-name p-3">No Server Was Created</p>
+  </ng-template>
 </div>
