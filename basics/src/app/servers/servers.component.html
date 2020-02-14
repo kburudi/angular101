@@ -1,6 +1,21 @@
+<!-- single server from app-server -->
+<h4 class="text-dark"> single app-server servers </h4>
 <app-server></app-server>
 <app-server></app-server>
 
+<h4 class="text-dark mt-5"> servers from array server </h4>
+<div *ngFor="let server of servers; let i = index" [ngStyle]="{backgroundColor: i > 3 ? 'green' : 'white'}">
+  {{server}}
+</div>
+<label>
+  <input type="text" class="form-control" (input)="onNameRealServer($event)" placeholder="Add New Server" />
+</label>
+<br>
+<button class="btn btn-primary shadow-none mt-3" (click)="onAddServer()">
+  Add Server
+</button>
+
+<h4 class="text-dark mt-5"> input type see </h4>
 <label>
   <input type="text" class="form-control" (input)="onUpdateServerName($event)" />
 </label>
@@ -45,5 +60,8 @@
   <button class="btn btn-primary shadow-none mt-3" (click)="onCreateNewServer()">
     Add New Server
   </button>
-  <p class="server-name p-3">{{ newServerStatus }}</p>
+  <p class="server-name p-3" *ngIf="created; else noServer">{{ newServerStatus }}</p>
+  <ng-template #noServer>
+    <p class="server-name p-3">No Server Was Created</p>
+  </ng-template>
 </div>

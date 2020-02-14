@@ -1,2 +1,6 @@
 <!-- String Interpolation -->
-<p>Server {{ serverId }} : {{ getServerStatus() }} </p>
+<!-- dynamic style rendering-->
+<p [ngStyle]="{color: getColor()}">Server {{ serverId }} : {{ getServerStatus() }} </p>
+
+<!-- dynamic class rendering-->
+<p [ngClass]="{'bg-success': serverStatus === 'online', 'bg-danger': serverStatus === 'offline'}" class="text-white">Server {{ serverId }} : {{ getServerStatus() }} </p>
