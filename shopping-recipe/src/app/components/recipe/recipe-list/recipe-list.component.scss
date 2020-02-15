@@ -1,0 +1,7 @@
+.anchor-hover:hover{
+  text-decoration: none !important;
+}
+
+.anchor-hover:hover > div > .list-group-item-heading{
+  color: orangered;
+}
