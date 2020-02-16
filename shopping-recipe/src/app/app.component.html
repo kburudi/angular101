@@ -1,7 +1,9 @@
 <!-- Highlight Card -->
-<app-header></app-header>
+<app-header
+(switchLink)="onSwitchPage($event)"
+></app-header>
 <div class="container py-5">
-  <app-recipe></app-recipe>
-  <app-shopping-list></app-shopping-list>
+  <app-recipe *ngIf="activePage === 'recipe'" ></app-recipe>
+  <app-shopping-list *ngIf="activePage === 'shopping'" ></app-shopping-list>
 </div>
 <router-outlet></router-outlet>

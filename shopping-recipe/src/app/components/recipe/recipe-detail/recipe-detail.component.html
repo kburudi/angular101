@@ -1,17 +1,17 @@
 <div class="row">
   <div class="col-12">
-    <img src="" alt="" class="img-fluid">
+    <img [src]="recipe.image" alt="{{recipe.name}}" class="img-fluid">
   </div>
 </div>
 <div class="row">
   <div class="col-12">
-    <h2>Recipe Name</h2>
+    <h2>{{recipe.name}}</h2>
   </div>
 </div>
 
-<div class="row">
-  <div class="col-12">
-    <ul class="navbar navbar-nav col-6 justify-content-end btn">
+<div class="row mr-0 pl-0">
+  <div class="col-12 pl-0">
+    <ul class="navbar navbar-nav col-6 justify-content-end btn p-0 border-0">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle bg-info text-white px-5" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Manage Recipes
@@ -27,7 +27,7 @@
 </div>
 <div class="row">
   <div class="col-12">
-    Recipe Description
+    {{recipe.description}}
   </div>
 </div>
 <div class="row">

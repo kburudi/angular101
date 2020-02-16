@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'shopping-list-recipe';
+  activePage = 'recipe';
+  onSwitchPage(newActivePage: string) {
+    this.activePage = newActivePage;
+  }
 }
