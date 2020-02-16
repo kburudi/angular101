@@ -3,14 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {FormsModule} from '@angular/forms';
+import {BasicAppHighlightDirective} from './basic-app-highlight-directive';
+import { ProperHighlightDirectiveDirective } from './directives/proper-highlight-directive.directive';
+import { StructuralDirective } from './directives/stractural.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BasicAppHighlightDirective,
+    ProperHighlightDirectiveDirective,
+    StructuralDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
