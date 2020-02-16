@@ -1,0 +1,25 @@
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-xs-12">
+      <p>Add new Servers or blueprints!</p>
+      <label for="server-name">Server Name</label>
+      <input
+        id="server-name"
+        type="text"
+        class="form-control"
+        #nameInput
+      > <!--Local reference-->
+<!--      <input id="server-name" type="text" class="form-control" [(ngModel)]="newServerName">--> <!--Two way binding-->
+      <label for="server-content">Server Content</label>
+<!--      <input id="server-content" type="text" class="form-control" [(ngModel)]="newServerContent">-->
+      <input id="server-content" type="text" class="form-control" #content>
+      <br>
+      <button
+        class="btn btn-primary mr-3"
+        (click)="onAddServer(nameInput)">Add Server</button> <!--Local reference pass element-->
+      <button
+        class="btn btn-primary"
+        (click)="onAddBlueprint(nameInput.value)">Add Server Blueprint</button> <!--Local reference pass value directly-->
+    </div>
+  </div>
+</div>
