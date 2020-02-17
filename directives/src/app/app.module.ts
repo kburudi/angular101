@@ -7,13 +7,15 @@ import {FormsModule} from '@angular/forms';
 import {BasicAppHighlightDirective} from './basic-app-highlight-directive';
 import { ProperHighlightDirectiveDirective } from './directives/proper-highlight-directive.directive';
 import { StructuralDirective } from './directives/stractural.directive';
+import { DropdownDirective } from './shared/dropdown.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     BasicAppHighlightDirective,
     ProperHighlightDirectiveDirective,
-    StructuralDirective
+    StructuralDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
